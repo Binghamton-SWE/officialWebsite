@@ -1,0 +1,61 @@
+// Imports
+@import url('//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css');
+
+// Variables
+@colorBase: rgba(68, 138, 175, 1);
+
+// Mixins
+.transition (@prop: all, @time: 1s, @ease: linear) {
+	-webkit-transition: @prop @time @ease;
+	-moz-transition: @prop @time @ease;
+	-o-transition: @prop @time @ease;
+	-ms-transition: @prop @time @ease;
+	transition: @prop @time @ease;
+}
+.universal-inline-block {
+	display: inline-block;
+	zoom: 1;
+	*display: inline;
+}
+
+// Styles
+.social-icons {
+  text-align: center;
+  font-family: "Open Sans";
+  font-weight: 300;
+  font-size: 1.5em;
+  color: @colorBase;
+  h1 {
+    margin: 40px 0;
+  }
+  ul {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		li {
+			.universal-inline-block;
+			vertical-align:  middle;
+			a {
+				display: block;
+				font-size: 1.4em;
+				margin: 0 5px;
+				text-decoration: none;
+				i {
+					color: @colorBase;
+					.transition(all, 0.2s, ease-in);
+				}
+				&:hover {
+					i {
+						color: darken(@colorBase, 20%);
+					}
+				}
+				&:focus, &:active {
+					i {
+						transition: none;
+						color: darken(@colorBase, 40%);
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>SWE - Binghamton</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+  <link href="https://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/horizontal.css">
+  <link rel="styelsheet" href="css/photos.css">
+  <script src="scripts/photos.js"></script>
+  <style>
+.row > .column {
+  padding: 0 4px;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Create four equal columns that floats next to eachother */
+.column {
+  float: left;
+  width: 25%;
+}
+
+.column img {
+	opacity: 0.8;
+	cursor: pointer;
+	margin-top: 8px;
+}
+
+.column img:hover{
+	opacity: 1;
+}
+
+
+/* The Modal (background) */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: black;
+}
+
+/* Modal Content */
+.modal-content {
+  position: relative;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 0;
+  width: 90%;
+  max-width: 1200px;
+}
+
+/* The Close Button */
+.close {
+  color: white;
+  position: absolute;
+  top: 10px;
+  right: 25px;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #999;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Hide the slides by default */
+.mySlides {
+  display: none;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* Caption text */
+.caption-container {
+  text-align: center;
+  background-color: black;
+  padding: 2px 16px;
+  color: white;
+}
+
+img.demo {
+  opacity: 0.6;
+}
+
+.active,
+.demo:hover {
+  opacity: 1;
+}
+
+img.hover-shadow {
+  transition: 0.3s;
+}
+
+.hover-shadow:hover {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+</style>
+</head>
+
+<div class="jumbotron text-center" style="margin-bottom:0">
+  <font color="white"><h1>PHOTOS</h1></font>
+</div>
+
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+  <a class="navbar-brand" href="#"></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="SWE_website.html">HOME</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="about.html">ABOUT</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="events.html">EVENTS</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="photos.html">PHOTOS</a>
+      </li>
+	  <li class="nav-item">
+		<a class="nav-link" href="eboard.html">EBOARD</a>
+	  </li>
+	  <li class="nav-item">
+		<a class="nav-link" href="contact.html">CONTACT US</a>
+	  </li>
+    </ul>
+  </div>  
+</nav>
+
+<body>
+
+<!-- The four columns -->
+<div class="container-fluid">
+<div class="row">
+  <div class="column">
+    <img id="myImg1" src="photos/fashion_show.jpg" style="width:100%" onclick="openModal();currentSlide(1)">
+	<img id="myImg2" src="photos/boys_girls_club.jpg" style="width:100%" onclick="openModal();currentSlide(2);">
+	<img id="myImg3" src="photos/img_2666.jpg" alt="Mountains" style="width:100%" onclick="getID(this.id);">
+  </div>
+  <div class="column">
+    <img src="photos/gscouts1.jpg" alt="Snow" style="width:100%" onclick="myFunction(this.id);">
+    <img src="photos/gscouts2.jpg" alt="Mountains" style="width:100%" onclick="myFunction(this);">
+    <img src="photos/SWE Fashion Show 4.jpg" alt="Lights" style="width:100%" onclick="myFunction(this);">
+  </div>
+  <div class="column">
+	<img src="photos/img_3326.jpg" alt="Girl Scouts" style="width:100%" onclick="myFunction(this);">
+  </div>
+</div>
+
+<div id="myModal" class="modal">
+	<span class="close cursor" onclick="closeModal()">&times;</span>
+	<div class="modal-content">
+	
+		<div class="mySlides">
+			<div class="numbertext">1 / 4</div>
+			<img src="photos/fashion_show.jpg" style="width:100%">
+		</div>
+		<div class="mySlides">
+			<div class="numbertext">2 / 4</div>
+			<img src="photos/boys_girls_club.jpg" style="width:100%">
+		</div>
+		<div class="mySlides">
+			<div class="numbertext">3 / 4</div>
+			<img src="photos/img_2666.jpg" style="width:100%">
+		</div>
+		
+		<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+		<a class="next" onclick="plusSlides(1)">&#10095;</a>
+		
+	</div>
+</div>
+<script>
+function openModal() {
+  document.getElementById('myModal').style.display = "block";
+}
+
+function closeModal() {
+  document.getElementById('myModal').style.display = "none";
+}
+
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("demo");
+  var captionText = document.getElementById("caption");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+  captionText.innerHTML = dots[slideIndex-1].alt;
+}
+</script>
+</body>
+<div class="jumbotron text-center" style="margin-bottom:0">
+	<ul class="fa-ul">
+		<li class="fa-li"><a href="mailto:swe@binghamtonsa.org"><i class="fa fa-envelope-o fa-2x" title="Email"></i></a></li>
+		<li class="fa-li"><a href="https://www.facebook.com/groups/binghamtonswe/?fb_dtsg_ag=AdzBn4sJsmSJXZdxJQqpLOUp7vh3xNeN-pWz2b5Fv14mQw%3AAdy5yxN97uXoUKG8wnnJO-hJmuRZgu2eSjNJ8iJ9lcQ59w"><i class="fa fa-facebook fa-2x"  title="Facebook"></i></a></li>
+		<li class="fa-li"><a href="https://www.instagram.com/swebinghamton/"><i class="fa fa-instagram fa-2x"  title="Instagram"></i></a></li>
+		<li class="fa-li"><a href="https://www.linkedin.com/groups/7435564"><i class="fa fa-linkedin fa-2x" title="LinkedIn"></i></a></li>
+	</ul>
+</div>
+</html>

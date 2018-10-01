@@ -9,12 +9,34 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
   <link href="https://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="css/horizontal.css">
+  <link rel="styelsheet" href="css/horizontal.css">
   <link rel="icon" href="photos/favicon.ico">
   <style>
-  .column {
+ .row > .column {
+  padding: 0 4px;
+}
+
+.row.col-centered > [class*='col-'] { 
+    display: inline-block;
+    float: none;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Create two equal columns that floats next to eachother */
+.column {
   float: left;
   width: 50%;
+}
+
+
+.column img {
+	margin-top: 8px;
+	float: left;
 }
 </style>
 </head>
@@ -53,14 +75,38 @@
   </div>  
 </nav>
 
-<body>
-<div class="container-fluid" style="margin-top:30px">
-	<div class="column">
-		<img src="photos/swe.png">
+<div class="container-fluid" style="margin-top:30px;">
+	<div class="row" style="margin-left:15px;margin-right:15px">
+		<div class="column">
+			<img src="photos/swe.png" alt="SWE" style="width:719px;height:284px;">
+		</div>
+		<div class="column">
+			<h1>Our Mission</h1>
+			<p>For more than six decades, SWE has given women engineers a unique place and a voice within the 
+				engineering industry. SWE empowers women to achieve their full potential in careers as engineers
+				and leaders, expand the image of the engineering and technology professions as a positive force in improving the quality of life,
+				and demonstrate the value of diversity and inclusion.</p>
+			<p>Binghamton SWE brings together women in engineering to engage in career development and social activities. Our club looks to promote women
+				in the engineering field through biweekly meetings focused on professional development and other events for volunteering and social activities.</p>
+		</div>
 	</div>
-	<h1>Our Mission</h1>
+	<div class="row" style="margin-left:15px;margin-right:15px">
+		<div class="column">
+			<h1>What We Do</h1>
+			<p>SWE at Binghamton strives to elevate and enhance the experience of women engineers at Binghamton University. We offer
+				career networking and opportunities, resume building, support from fellow female engineers,
+				leadership opportunities, community outreach volunteering opportunities, and more!</p>
+			<p>Our mentorship initiative creates connections between members to help underclassmen find their way.
+				We volunteer each semester with the Boys and Girls Club and the Girl Scouts
+				teaching them and getting them excited about engineering. We have many opportunities for leadership on our eboard with 13 positions, as well
+				as several committee positions if you can't handle the time commitment.</p>
+			<p>If you are a female in engineering, SWE is for you!</p>
+		</div>
+		<div class="column">
+			<img src="photos/IMG_2828.jpg" alt="Open House Tabling" style="width:75%" align="right">
+		</div>
+	</div>
 </div>
-</body>
 
 <div class="jumbotron text-center" style="margin-bottom:0">
 	<ul class="fa-ul">
